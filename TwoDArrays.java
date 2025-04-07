@@ -13,6 +13,11 @@ import java.io.FileWriter;
  */
 public final class TwoDArrays {
 
+    private static final int AVERAGE = 75;
+    private static final int STD_DEV = 10;
+    private static final int NUM_STUDENTS = 15;
+    private static final int NUM_ASSIGNMENTS = 6;
+
     // Prevent instantiation
     private TwoDArrays() {
         throw new IllegalStateException("Utility Class");
@@ -26,7 +31,7 @@ public final class TwoDArrays {
         for (int indexNum = 1; indexNum < markStud.length; indexNum++) {
             for (int indexNum2 = 1; indexNum2
              < markStud[0].length; indexNum2++) {
-                int gradMark = (int) randomNum.nextGaussian() * 10 + 75;
+                int gradMark = (int) randomNum.nextGaussian() * STD_DEV + AVERAGE;
                 markStud[indexNum][indexNum2] = String.valueOf(gradMark);
             }
         }
@@ -41,7 +46,7 @@ public final class TwoDArrays {
         File studFile = new File("students.txt");
         File assignFile = new File("assignments.txt");
         // Create 2D array
-        String[][] finalList = new String[15][6];
+        String[][] finalList = new String[NUM_STUDENTS][NUM_ASSIGNMENTS];
         // Correct Scanner usage
         Scanner studReader = new Scanner(studFile);
         Scanner assignReader = new Scanner(assignFile);
