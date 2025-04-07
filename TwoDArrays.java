@@ -12,12 +12,15 @@ import java.io.FileWriter;
  * @since 2025-03-18
  */
 public final class TwoDArrays {
-
+    /** Mean. */
     private static final int AVERAGE = 75;
+    /** Standard Deviation. */
     private static final int STD_DEV = 10;
+    /** Number of Students. */
     private static final int NUM_STUDENTS = 15;
+    /** Number of Assignments. */
     private static final int NUM_ASSIGNMENTS = 6;
-
+    /** Maximum Value. */
     // Prevent instantiation
     private TwoDArrays() {
         throw new IllegalStateException("Utility Class");
@@ -31,8 +34,10 @@ public final class TwoDArrays {
         for (int indexNum = 1; indexNum < markStud.length; indexNum++) {
             for (int indexNum2 = 1; indexNum2
              < markStud[0].length; indexNum2++) {
-                int gradMark = (int) randomNum.nextGaussian() * STD_DEV + AVERAGE;
-                markStud[indexNum][indexNum2] = String.valueOf(gradMark);
+                int gradMark =
+                 (int) randomNum.nextGaussian() * STD_DEV + AVERAGE;
+                markStud[indexNum][indexNum2] =
+                 String.valueOf(gradMark);
             }
         }
     }
